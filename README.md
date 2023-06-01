@@ -17,7 +17,7 @@ There will be a Tailwind plugin for this library in the near future.
 I'm hoping a tailwind plugin will create even smaller overhead. AnnexCSS will be benchmarked against its plugin (annexcss-tailwind) in a Tailwind/NextJS environment.
 
 So how does it work? AnnexCSS first creates variables in :root to reuse as basic properties. 
-```
+```CSS
 
 :root {
 
@@ -31,7 +31,7 @@ So how does it work? AnnexCSS first creates variables in :root to reuse as basic
 
 It then wraps all elements (*) with some required core properties for individual classes to function properly. All classes use this wrapper when applied.
 
-```
+```CSS
 * {
   
     animation-duration: 1s;
@@ -45,7 +45,7 @@ It then wraps all elements (*) with some required core properties for individual
 ```
 Classes typically look like this:
 
-```
+```CSS
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
@@ -74,14 +74,14 @@ Classes typically look like this:
 You can easily add these animations to your JSX or MDX just like a regular CSS class. All AnnexCSS animation classes are prefixed with an @ symbol.
 
 
-``` 
+```HTML
 
 <div className="@fadeIn container"> I love potato </div>
 
 ```
 You can extend functionality by adding utility classes like so:
 
-```
+```HTML
 
 <div class="@fadeIn flex">
   <div class="@fadeIn @delay-1s flex-none ...">
