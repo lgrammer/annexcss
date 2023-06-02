@@ -1,14 +1,15 @@
 # @nnexCSS 
 
-```
+```bash
 
 npm i annexcss
 
 
 ```
+
 At the top of your entry file:
 
-```
+```bash
 
 import 'annexcss'
 
@@ -54,7 +55,8 @@ It then wraps all elements (*) with some required core properties for individual
 
 }
 ```
-We focus on webkit but autoprefixer can assist you if you need to expand cross-compatibility. Classes typically look like this:
+ 
+In regards to browser compatibility AnnexCSS puts focus on webkit. Autoprefixer can assist you if you need to expand cross-compatibility. Classes typically look like this:
 
 ```CSS
 @-webkit-keyframes fadeIn {
@@ -82,7 +84,30 @@ We focus on webkit but autoprefixer can assist you if you need to expand cross-c
 
 ```
 
-You can easily add these animations to your JSX or MDX just like a regular CSS class. All AnnexCSS animation classes are prefixed with an @ symbol.
+You can easily add these animations to your JSX or markup just like a regular CSS class. All AnnexCSS classes are prefixed with an @ symbol. This library was originally compiled using a custom animate.css build so you may see similar classes to the popular library. 
+
+
+|                   |                    |                     |                      |
+| ----------------- | ------------------ | ------------------- | -------------------- |
+| `@bounce`          | `@flash`            | `@pulse`             | `@rollIn`             |
+| `@shake`           | `@headShake`        | `@swing`             | `@rollOut`            |
+| `@wobble`          | `@tada`             | `@bounceIn`          | `@bounceInDown`       |
+| `@bounceInLeft`    | `@bounceInRight`    | `@bounceInUp`        | `@bounceOut`          |
+| `@bounceOutDown`   | `@bounceOutLeft`    | `@bounceOutRight`    | `@bounceOutUp`        |
+| `@fadeIn`          | `@fadeInDown`       | `@fadeInDownBig`     | `@fadeInLeft`         |
+| `@fadeInLeftBig`   | `@fadeInRight`      | `@fadeInRightBig`    | `@fadeInUp`           |
+| `@fadeInUpBig`     | `@fadeOut`          | `@fadeOutDown`       | `@fadeOutDownBig`     |
+| `@fadeOutLeft`     | `@fadeOutLeftBig`   | `@fadeOutRight`      | `@fadeOutRightBig`    |
+| `@fadeOutUp`       | `@fadeOutUpBig`     | `@flipInX`           | `@flipInY`            |
+| `@flipOutX`        | `@flipOutY`         | `@slideInUp`         | `@slideOutUp`         |
+| `@rotateIn`        | `@rotateInDownLeft` | `@rotateInDownRight` | `@rotateInUpLeft`     |
+| `@rotateInUpRight` | `@rotateOut`        | `@rotateOutDownLeft` | `@rotateOutDownRight` |
+| `@rotateOutUpLeft` | `@rotateOutUpRight` | `@zoomOutUp`         | `@zoomOut`            |
+| `@zoomIn`          | `@zoomInDown`       | `@zoomInUp`          | `@zoomOutRight`       |
+| `@zoomInLeft`      | `@zoomInRigh`       | `@slideOutRight`     | `@slideOutLeft`       |  
+| `@zoomOutDown`     | `@zoomOutLeft`      | `@slideInRight`      | `@slideOutDown`       |
+| `@slideInDown`     | `@slideInLeft`      |
+
 
 
 ```HTML
@@ -110,10 +135,10 @@ You can extend functionality by adding utility classes like so:
 
 And that's all there is to it!
 
-There are docs planned. They will be released alongside a TBA Next.js front-end framework. 
+There are docs planned that will be released alongside a TBA Next.js front-end framework. 
 
 AnnexCSS is made to compliment TailwindCSS classes and expand on animations, but using Tailwind is not a requirement. It works just fine with regular CSS. 
 
-A plugin is planned in the near future.
+A Tailwind plugin is planned in the near future.
 
-Contributions are welcome. This project will accept any contribution that adds a new class. No repeats or modifications pls.
+Contributions are welcome but the focus is optimization. I'm only looking to extend classes if they relate to classic commonly used processing techniques. There will be a dicussion for this in the frameworks repo.
