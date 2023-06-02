@@ -1,19 +1,17 @@
 # @nnexCSS 
 
+AnnexCSS is a lightweight CSS animation library made for use with Next.js in a TBA front-end framework. It can be used independently with any web framework or project.
+
+Modern browsers can properly handle unused styling so there are no special bells or whistles. Most modern CSS libraries overlook this and add unnecessary bloat to their project. When used in a framework like Next or Gatsby you get all the benefits of minification as well.
+
+If you are using this library without a framework that provides automatic minification adding postcss with cssnano to your project can help you easily minify. It is simply one big CSS file and easy to target.
+
 ```bash
 npm i annexcss
 ```
 ```bash
 import 'annexcss'
 ```
-
-# What is AnnexCSS?
-
-AnnexCSS is a lightweight CSS animation library made for use with Next.js in a TBA front-end framework. It can be used independently with any web framework or project.
-
-Modern browsers can properly handle unused styling so there are no special bells or whistles. Most modern CSS libraries overlook this and add unnecessary bloat to their project. When used in a framework like Next or Gatsby you get all the benefits of minification as well.
-
-If you are using this library without a framework that provides automatic minification adding postcss with cssnano to your project can help you easily minify. It is simply one big CSS file and easy to target.
 
 So how does it work? AnnexCSS first creates variables in :root to reuse as basic properties. 
 
