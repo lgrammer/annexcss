@@ -71,11 +71,13 @@ In regards to browser compatibility AnnexCSS focuses entirely on webkit. This co
 
 ```
 
-All AnnexCSS classes are prefixed with an @ symbol. This library was originally compiled using a custom animate.css build so you may take notice of simliar base class names. Many of the "uncommon" classes were removed to simplify the class set and reduce framework build times as much as possible. Using the animate.css package to compile was just a method to prefix and quickly iterate on commonly used CSS animation techniques for an accompanying JS framework. 
+All AnnexCSS classes are prefixed with an @ symbol. This library was originally compiled using a custom animate.css build so you may take notice of the simliar class names. Many of the "uncommon" classes were removed to simplify the class set and reduce framework build times as much as possible. 
 
-Originally I wanted to use animate.css itself or a fork of the project, but that project is a bit older now and had unneeded overhead. The current recent versions of Next.js (>9.5.0) makes the animate.css postcss scripts redundant.
+Using the animate.css package to compile was just a method to prefix and quickly iterate on commonly used CSS animation techniques for an accompanying JS framework. 
 
-There is one major core difference as well - AnnexCSS wraps all elements with required properties instead of individually applying them in a general class alongside animation classes. This allows for cleaner markup alongside the smaller build size. Instead of animate__animated animate__fadeIn, you just need @fadeIn etc.
+Originally I wanted to use animate.css itself or a fork of the project, but the project is a bit older now and had unneeded overhead. The current recent versions of Next.js (>9.5.0) makes the animate.css postcss scripts redundant. All postcss should be shifted to the framework side to maximize compatibility.
+
+There is one major core difference as well - AnnexCSS wraps all elements with required properties instead of individually applying them in a general class alongside the animation classes. This allows for cleaner markup. Instead of animate__animated animate__fadeIn just for one animation, you just need @fadeIn etc.
 
 |                   |                    |                     |                      |
 | ----------------- | ------------------ | ------------------- | -------------------- |
