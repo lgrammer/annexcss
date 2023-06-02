@@ -75,9 +75,9 @@ All AnnexCSS classes are prefixed with an @ symbol. This library was originally 
 
 Using the animate.css package to compile was just a method to prefix and quickly iterate on commonly used CSS animation techniques for an accompanying JS framework. 
 
-Originally I wanted to use animate.css itself or a fork of the project, but the project is a bit older now and had unneeded overhead. The current recent versions of Next.js (>9.5.0) makes the animate.css postcss scripts redundant. All postcss should be shifted to the framework side to maximize compatibility.
+Originally I wanted to use animate.css itself or a fork of the project, but the project is a bit older now and had unneeded overhead. The current recent versions of Next.js (>9.5.0) make the animate.css postcss scripts redundant. All postcss should be shifted to the framework side to maximize compatibility.
 
-There is one major core difference as well - AnnexCSS wraps all elements with required properties instead of individually applying them in a general class alongside the animation classes. This allows for cleaner markup. Instead of animate__animated animate__fadeIn just for one animation, you just need @fadeIn etc.
+There is one major core difference as well - AnnexCSS wraps all elements with required properties instead of individually applying them. This allows for cleaner markup. Instead of animate__animated animate__fadeIn just for one animation, you just need @fadeIn etc.
 
 |                   |                    |                     |                      |
 | ----------------- | ------------------ | ------------------- | -------------------- |
