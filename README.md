@@ -114,14 +114,14 @@ You can extend functionality by adding utility classes like so:
 
 ```HTML
 
-<div class="@fadeIn flex">
-  <div class="@fadeIn @delay-1s flex-none ...">
+<div className="@fadeIn flex">
+  <div className="@fadeIn @delay-1s flex-none ...">
     01 Potato
   </div>
-  <div class="@fadeIn @delay-2s flex-1 w-64 ...">
+  <div className="@fadeIn @delay-2s flex-1 w-64 ...">
     02 Potato
   </div>
-  <div class="@fadeIn @delay-3s flex-1 w-32 ...">
+  <div className="@fadeIn @delay-3s flex-1 w-32 ...">
     03 Potato
   </div>
 </div>
