@@ -1,22 +1,33 @@
 # @nnexCSS 
 
 ```
-npm install annexcss
+
+npm i annexcss
+
+
+```
+At the top of your entry file:
+
 ```
 
-AnnexCSS is a lightweight CSS animation library made for use with Next.js in a TBA front-end framework. This library should also work well with any project or framework that minifies your CSS files.
+import 'annexcss'
 
-AnnexCSS is made to compliment TailwindCSS classes and expand on animations, but using Tailwind is not a requirement. It works just fine with regular CSS. 
+```
 
-It is simply pure CSS and the build size is negligible when minified. There is practically no overhead.
+# What is AnnexCSS?
+
+AnnexCSS is a lightweight CSS animation library made for use with Next.js in a TBA front-end framework. It can be used independently with any web framework or project.
+
+When coupled with frameworks like Next or Gatsby the browser can properly handle unused styling, so there are no special bells or whistles. Most modern CSS libraries overlook this and add unnecessary bloat to their project.
+
+The goal is to keep the unpacked size as low as possible. That being said postcss-purgecss will be configured in the accompanying JS framework to minmax optimization for both build times and performance.
+
+It is simply pure CSS and the current build size is already negligible when minified. There is practically no overhead in regards to build time or performance.
 
 If using in a project without automatic minification, postcss with cssnano can help you easily minify.
 
-There will be a Tailwind plugin for this library in the near future. 
-
-I'm hoping a tailwind plugin will create even smaller overhead. AnnexCSS will be benchmarked against its plugin (annexcss-tailwind) in a Tailwind/NextJS environment.
-
 So how does it work? AnnexCSS first creates variables in :root to reuse as basic properties. 
+
 ```CSS
 
 :root {
@@ -43,7 +54,7 @@ It then wraps all elements (*) with some required core properties for individual
 
 }
 ```
-Classes typically look like this:
+We focus on webkit but autoprefixer can assist you if you need to expand cross-compatibility. Classes typically look like this:
 
 ```CSS
 @-webkit-keyframes fadeIn {
@@ -100,5 +111,9 @@ You can extend functionality by adding utility classes like so:
 And that's all there is to it!
 
 There are docs planned. They will be released alongside a TBA Next.js front-end framework. 
+
+AnnexCSS is made to compliment TailwindCSS classes and expand on animations, but using Tailwind is not a requirement. It works just fine with regular CSS. 
+
+A plugin is planned in the near future.
 
 Contributions are welcome. This project will accept any contribution that adds a new class. No repeats or modifications pls.
