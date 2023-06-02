@@ -28,7 +28,7 @@ So how does it work? AnnexCSS first creates variables in :root to reuse as basic
 
 ```
 
-It then wraps all elements (*) with some required core properties for individual classes to function properly. All classes use this wrapper when applied.
+It then wraps all elements (*) with required core properties for individual classes to function properly. All classes use this wrapper when applied. This is a core feature unique to AnnexCSS.
 
 ```CSS
 * {
@@ -71,9 +71,11 @@ In regards to browser compatibility AnnexCSS focuses entirely on webkit. This co
 
 ```
 
-All AnnexCSS classes are prefixed with an @ symbol. This library was originally compiled using a custom animate.css build so you may see similar classes to the popular library. 
+All AnnexCSS classes are prefixed with an @ symbol. This library was originally compiled using a custom animate.css build so you may take notice of simliar base class names. Many of the "uncommon" classes were removed to simplify the class set and reduce framework build times as much as possible. Using the animate.css package to compile was just a method to prefix and quickly iterate on commonly used CSS animation techniques for an accompanying JS framework. 
 
-The major difference - AnnexCSS wraps all elements instead of individually applying base animation properties as needed. Seeing as hundreds of animations aren't typically needed in any given website and modern browsers override/remove unneeded styling performance hits using this method are entirely negligible.
+Originally I wanted to use animate.css itself or a fork of the project, but that project is a bit older now and had unneeded overhead. The current recent versions of Next.js (>9.5.0) makes the animate.css postcss scripts redundant.
+
+There is one major core difference as well - AnnexCSS wraps all elements with required properties instead of individually applying them in a general class alongside animation classes. This allows for cleaner markup alongside the smaller build size. Instead of animate__animated animate__fadeIn, you just need @fadeIn etc.
 
 |                   |                    |                     |                      |
 | ----------------- | ------------------ | ------------------- | -------------------- |
