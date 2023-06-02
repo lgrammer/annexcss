@@ -71,7 +71,7 @@ In regards to browser compatibility AnnexCSS focuses entirely on webkit. This co
 
 ```
 
-You can easily add these animations to your JSX or markup just like any regular CSS class. All AnnexCSS classes are prefixed with an @ symbol. This library was originally compiled using a custom animate.css build so you may see similar classes to the popular library. 
+All AnnexCSS classes are prefixed with an @ symbol. This library was originally compiled using a custom animate.css build so you may see similar classes to the popular library. 
 
 The major difference - AnnexCSS wraps all elements instead of individually applying base animation properties as needed. Seeing as hundreds of animations aren't typically needed in any given website and modern browsers override/remove unneeded styling performance hits using this method are entirely negligible.
 
@@ -94,9 +94,12 @@ The major difference - AnnexCSS wraps all elements instead of individually apply
 | `@zoomIn`          | `@zoomInDown`       | `@zoomInUp`          | `@zoomOutRight`       |
 | `@zoomInLeft`      | `@zoomInRigh`       | `@slideOutRight`     | `@slideOutLeft`       |  
 | `@zoomOutDown`     | `@zoomOutLeft`      | `@slideInRight`      | `@slideOutDown`       |
-| `@slideInDown`     | `@slideInLeft`      |
-
-
+| `@slideInDown`     | `@slideInLeft`      |  
+  
+<br/>  
+You can easily add these animations to your JSX or markup just like any regular CSS class.   
+<br/>  
+<br/>  
 
 ```HTML
 
