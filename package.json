@@ -1,11 +1,11 @@
 {
   "name": "annexcss",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "",
   "main": "annex.css",
   "repository": {
     "type": "git",
-    "url": "https://https://github.com/lgrammer/annexcss"
+    "url": "https://github.com/lgrammer/annexcss"
   },
   "author": {
     "name": "Landon Grammer"
