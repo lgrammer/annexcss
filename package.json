@@ -1,9 +1,16 @@
 {
   "name": "annexcss",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "",
   "main": "annex.css",
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "https://https://github.com/lgrammer/annexcss"
+  },
+  "author": {
+    "name": "Landon Grammer"
+  },
+  "keywords": ["CSS","Animation","Library"],
+
+  "license": "MIT"
 }
