@@ -4,7 +4,7 @@ AnnexCSS is a lightweight single-file pure CSS animation library made for use wi
 
 Next.js now uses postcss directly. Processing scripts can easily be moved framework side expanding the utility of a truly minimalist CSS library.
 
-When minified the entire module takes up >1kb. Should you require only a few basic animations the annex.css file can easily be searched without much effort reducing your CSS overhead even further. Just copy what you need to your global.css 🏴‍☠️
+When minified the entire module takes up <1kb. Should you require only a few basic animations the annex.css file can easily be searched without much effort reducing your CSS overhead even further. Just copy what you need to your global.css 🏴‍☠️
 
 If you aren't using AnnexCSS with a framework and still need some basics such as minification - I recommend using postcss with cssnano. AnnexCSS being only a single file makes it easy to target.
 
