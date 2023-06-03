@@ -1,10 +1,12 @@
 # @nnexCSS 
 
-AnnexCSS is a lightweight CSS animation library made for use with Next.js in a TBA front-end framework. It can be used independently with any web framework or project.
+AnnexCSS is a lightweight single-file pure CSS animation library made for use with Next.js in a TBA front-end framework. It can be used independently with any web framework or project.
 
-Modern browsers can properly handle unused styling so there are no special bells or whistles. Most modern CSS libraries overlook this and add unnecessary bloat to their project. When used in a framework like Next or Gatsby you get all the benefits of minification as well.
+Next.js now uses postcss directly. Processing scripts can easily be moved framework side expanding the utility of a truly minimalist CSS library.
 
-If you are using this library without a framework that provides automatic minification adding postcss with cssnano to your project can help you easily minify. It is simply one big CSS file and easy to target.
+When minified the entire module takes up >1kb. Should you require only a few basic animations the annex.css file can easily be searched without much effort reducing your CSS overhead even further. Just copy what you need to your global.css 🏴‍☠️
+
+If you aren't using AnnexCSS with a framework and still need some basics such as minification - I recommend using postcss with cssnano. AnnexCSS being only a single file makes it easy to target.
 
 ```bash
 npm i annexcss
@@ -12,6 +14,74 @@ npm i annexcss
 ```bash
 import 'annexcss'
 ```
+
+You can easily add animations to your JSX or markup just like any regular CSS class  
+
+```HTML
+
+<div className="@fadeIn container"> I love potato </div>
+
+```
+
+You can extend functionality by adding utility classes 
+
+
+```HTML
+
+<div className="@fadeIn flex">
+  <div className="@fadeIn @delay-1s flex-none ...">
+    01 Potato
+  </div>
+  <div className="@fadeIn @delay-2s flex-1 w-64 ...">
+    02 Potato
+  </div>
+  <div className="@fadeIn @delay-3s flex-1 w-32 ...">
+    03 Potato
+  </div>
+</div>
+
+```
+
+<br/>
+
+|      Classes      |                    |                     |                      |
+| ----------------- | ------------------ | ------------------- | -------------------- |
+| `@bounce`          | `@flash`            | `@pulse`             | `@rollIn`             |
+| `@shake`           | `@headShake`        | `@swing`             | `@rollOut`            |
+| `@wobble`          | `@tada`             | `@bounceIn`          | `@bounceInDown`       |
+| `@bounceInLeft`    | `@bounceInRight`    | `@bounceInUp`        | `@bounceOut`          |
+| `@bounceOutDown`   | `@bounceOutLeft`    | `@bounceOutRight`    | `@bounceOutUp`        |
+| `@fadeIn`          | `@fadeInDown`       | `@fadeInDownBig`     | `@fadeInLeft`         |
+| `@fadeInLeftBig`   | `@fadeInRight`      | `@fadeInRightBig`    | `@fadeInUp`           |
+| `@fadeInUpBig`     | `@fadeOut`          | `@fadeOutDown`       | `@fadeOutDownBig`     |
+| `@fadeOutLeft`     | `@fadeOutLeftBig`   | `@fadeOutRight`      | `@fadeOutRightBig`    |
+| `@fadeOutUp`       | `@fadeOutUpBig`     | `@flipInX`           | `@flipInY`            |
+| `@flipOutX`        | `@flipOutY`         | `@slideInUp`         | `@slideOutUp`         |
+| `@rotateIn`        | `@rotateInDownLeft` | `@rotateInDownRight` | `@rotateInUpLeft`     |
+| `@rotateInUpRight` | `@rotateOut`        | `@rotateOutDownLeft` | `@rotateOutDownRight` |
+| `@rotateOutUpLeft` | `@rotateOutUpRight` | `@zoomOutUp`         | `@zoomOut`            |
+| `@zoomIn`          | `@zoomInDown`       | `@zoomInUp`          | `@zoomOutRight`       |
+| `@zoomInLeft`      | `@zoomInRigh`       | `@slideOutRight`     | `@slideOutLeft`       |  
+| `@zoomOutDown`     | `@zoomOutLeft`      | `@slideInRight`      | `@slideOutDown`       |
+| `@slideInDown`     | `@slideInLeft`      |  
+
+
+<br/> 
+<br/>
+
+
+|    Utilities      |                    |                     |                      |
+| ----------------- | ------------------ | ------------------- | -------------------- |
+| `@infinite`        | `@reapeat-1`        | `@repeat-2`          | `@repeat-3`         |
+| `@delay-1s`        | `@delay-2s`         | `@delay-3s`          | `@delay-4s`         |
+| `@delay-5s`        | `@faster`           | `@fast`              | `@slow`             |
+| `@slower`          |
+
+<br/>
+
+<br/>
+
+
 
 So how does it work? AnnexCSS first creates variables in :root to reuse as basic properties. 
 
@@ -43,7 +113,7 @@ It then wraps all elements (*) with required core properties for individual clas
 }
 ```
  
-In regards to browser compatibility AnnexCSS focuses entirely on webkit. This covers the vast majority of users. Postcss with autoprefixer can assist you if you need to expand cross-compatibility. Classes typically look like this:
+In regards to browser compatibility AnnexCSS focuses entirely on webkit. Postcss with autoprefixer can assist you if you need to expand cross-compatibility. Classes typically look like this:
 
 ```CSS
 @-webkit-keyframes fadeIn {
@@ -71,69 +141,20 @@ In regards to browser compatibility AnnexCSS focuses entirely on webkit. This co
 
 ```
 
-All AnnexCSS classes are prefixed with an @ symbol. This library was originally compiled using a custom animate.css build so you may take notice of the simliar class names. Many of the "uncommon" classes were removed to simplify the class set and reduce framework build times as much as possible. 
+# About
 
-Using the animate.css package to compile was just a method to prefix and quickly iterate on commonly used CSS animation techniques for an accompanying JS framework. 
+All AnnexCSS classes are prefixed with an @ symbol. This library was originally compiled using a custom animate.css build so you may take notice of the simliar class names. Many of the "uncommon" classes were removed to simplify the class set and reduce build size as much as possible. 
 
-Originally I wanted to use animate.css itself or a fork of the project, but the project is a bit older now and had unneeded overhead. The current recent versions of Next.js (>9.5.0) make the animate.css postcss scripts redundant. All postcss should be shifted to the framework side to maximize compatibility.
+Using the animate.css package to compile annex.css was just a method to prefix and quickly iterate on commonly used CSS animation techniques for an accompanying JS framework. 
 
-There is one major core difference as well - AnnexCSS wraps all elements with required properties instead of individually applying them. This allows for cleaner markup. Instead of animate__animated animate__fadeIn just for one animation, you just need @fadeIn etc.
+Originally I wanted to use animate.css itself or a fork of the project but the project is a bit older now and had unneeded overhead. The current recent versions of Next.js (>9.5.0) make the animate.css postcss scripts a bit redundant.
 
-|                   |                    |                     |                      |
-| ----------------- | ------------------ | ------------------- | -------------------- |
-| `@bounce`          | `@flash`            | `@pulse`             | `@rollIn`             |
-| `@shake`           | `@headShake`        | `@swing`             | `@rollOut`            |
-| `@wobble`          | `@tada`             | `@bounceIn`          | `@bounceInDown`       |
-| `@bounceInLeft`    | `@bounceInRight`    | `@bounceInUp`        | `@bounceOut`          |
-| `@bounceOutDown`   | `@bounceOutLeft`    | `@bounceOutRight`    | `@bounceOutUp`        |
-| `@fadeIn`          | `@fadeInDown`       | `@fadeInDownBig`     | `@fadeInLeft`         |
-| `@fadeInLeftBig`   | `@fadeInRight`      | `@fadeInRightBig`    | `@fadeInUp`           |
-| `@fadeInUpBig`     | `@fadeOut`          | `@fadeOutDown`       | `@fadeOutDownBig`     |
-| `@fadeOutLeft`     | `@fadeOutLeftBig`   | `@fadeOutRight`      | `@fadeOutRightBig`    |
-| `@fadeOutUp`       | `@fadeOutUpBig`     | `@flipInX`           | `@flipInY`            |
-| `@flipOutX`        | `@flipOutY`         | `@slideInUp`         | `@slideOutUp`         |
-| `@rotateIn`        | `@rotateInDownLeft` | `@rotateInDownRight` | `@rotateInUpLeft`     |
-| `@rotateInUpRight` | `@rotateOut`        | `@rotateOutDownLeft` | `@rotateOutDownRight` |
-| `@rotateOutUpLeft` | `@rotateOutUpRight` | `@zoomOutUp`         | `@zoomOut`            |
-| `@zoomIn`          | `@zoomInDown`       | `@zoomInUp`          | `@zoomOutRight`       |
-| `@zoomInLeft`      | `@zoomInRigh`       | `@slideOutRight`     | `@slideOutLeft`       |  
-| `@zoomOutDown`     | `@zoomOutLeft`      | `@slideInRight`      | `@slideOutDown`       |
-| `@slideInDown`     | `@slideInLeft`      |  
-  
-<br/>  
-You can easily add these animations to your JSX or markup just like any regular CSS class.   
-<br/>  
-<br/>  
-
-```HTML
-
-<div className="@fadeIn container"> I love potato </div>
-
-```
-You can extend functionality by adding utility classes like so:
-
-```HTML
-
-<div className="@fadeIn flex">
-  <div className="@fadeIn @delay-1s flex-none ...">
-    01 Potato
-  </div>
-  <div className="@fadeIn @delay-2s flex-1 w-64 ...">
-    02 Potato
-  </div>
-  <div className="@fadeIn @delay-3s flex-1 w-32 ...">
-    03 Potato
-  </div>
-</div>
-
-```
+There is one major core difference outside of the scripts and size. AnnexCSS wraps all elements with required properties instead of individually applying them. This allows for cleaner markup. Instead of animate__animated animate__fadeIn just for one animation, you just need @fadeIn etc.
 
 And that's all there is to it!
 
-There are docs planned that will be released alongside the previously mentioned JS framework. 
+There are docs planned that will be released within the previously mentioned JS framework.
 
-AnnexCSS is made to compliment TailwindCSS classes and expand on animations, but using Tailwind is not a requirement. It works just fine with regular CSS. 
-
-A Tailwind plugin is planned in the near future and will be provided as an installation option. In the event you are using an extremely large amount of animations using the plugin would be the recommended option for maximizing optimization.
+A Tailwind plugin is also in the works. 
 
 Contributions are welcome but the focus is optimization. I'm only looking to extend classes if they relate to classic commonly used processing techniques. There will be a dicussion for this in the frameworks repo.
