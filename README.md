@@ -145,7 +145,7 @@ Using the animate.css package to compile annex.css was just a method to prefix a
 
 Originally I wanted to use animate.css itself or a fork of the project but the project is a bit older now and had unneeded overhead. The current recent versions of Next.js (>9.5.0) make the animate.css postcss scripts a bit redundant.
 
-There is one major core difference outside of the scripts and size. AnnexCSS wraps all elements with required properties instead of individually applying them. This allows for cleaner markup. Instead of animate__animated animate__fadeIn just for one animation, you just need @fadeIn etc. Tree shaking handles anything unused before it even hits the browser. If you have a a completely vanilla project that doesn't t utilize webpack, I'd recommend animate.css instead.
+There is one major core difference outside of the scripts and size. AnnexCSS wraps all elements with required properties instead of individually applying them. This allows for cleaner markup. Instead of animate__animated animate__fadeIn just for one animation, you just need @fadeIn etc. Tree shaking handles anything unused before it even hits the browser. If you have a a completely vanilla project that doesn't utilize webpack, I'd recommend animate.css instead.
 
 There are docs planned that will be released within the previously mentioned JS framework. 
 
