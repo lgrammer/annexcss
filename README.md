@@ -1,6 +1,6 @@
 # @nnexCSS 
 
-AnnexCSS is a lightweight single-file pure CSS animation library made for use with Next.js in a TBA front-end framework. It can be used independently with any web framework or project that utilizies webpack.
+AnnexCSS is a lightweight single-file pure CSS animation library made for use in a TBA React framework. It can be used independently with any web framework or project that utilizies webpack.
 
 ```bash
 npm i annexcss
@@ -137,14 +137,14 @@ In regards to browser compatibility AnnexCSS focuses entirely on webkit. Postcss
 
 # About
 
-All AnnexCSS classes are prefixed with an @ symbol. This library was originally compiled using a custom animate.css build so you may take notice of the simliar class names. Many of the "uncommon" classes were removed to simplify the class set and reduce build size as much as possible. 
+This library was originally compiled using a custom animate.css build so you may take notice of the simliar class names. Many of the "uncommon" classes were removed to simplify the class set and reduce build size as much as possible.
 
 Using the animate.css package to compile annex.css was just a method to prefix and quickly iterate on commonly used CSS animation techniques for an accompanying JS framework. 
 
-Originally I wanted to use animate.css itself or a fork of the project but the project is a bit older now and had unneeded overhead. The current recent versions of Next.js (>9.5.0) make the animate.css postcss scripts a bit redundant.
+Originally I wanted to use animate.css itself or a fork of the project but it's getting a bit older now and had unneeded overhead for my use case. Not only is postcss commonly found on the framework side now - webpack itself can be configured to properly 'tree shake' CSS files.
 
-There is one major core difference outside of the scripts and size. AnnexCSS wraps all elements with required properties instead of individually applying them. This allows for cleaner markup. Instead of animate__animated animate__fadeIn just for one animation, you just need @fadeIn etc. Tree shaking handles anything unused before it even hits the browser. If you have a completely vanilla project that doesn't utilize webpack, I'd recommend animate.css instead.
+https://webpack.js.org/guides/tree-shaking/
+
+There is one major core difference outside of the postcss scripts and size. AnnexCSS wraps all elements with required properties instead of individually applying them. This allows for cleaner markup. Instead of animate__animated animate__fadeIn just for one animation, you just need @fadeIn etc. If you have a completely vanilla project that doesn't utilize webpack (or a framework), I'd recommend animate.css instead.
 
 There are docs planned that will be released within the previously mentioned JS framework. 
-
-A Tailwind plugin is also in the works. 
