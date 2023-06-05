@@ -151,10 +151,7 @@ Originally I wanted to use animate.css itself or a fork of the project but the p
 
 There is one major core difference outside of the scripts and size. AnnexCSS wraps all elements with required properties instead of individually applying them. This allows for cleaner markup. Instead of animate__animated animate__fadeIn just for one animation, you just need @fadeIn etc.
 
-And that's all there is to it!
-
 There are docs planned that will be released within the previously mentioned JS framework.
 
 A Tailwind plugin is also in the works. 
 
-Contributions are welcome but the focus is optimization. I'm only looking to extend classes if they relate to classic commonly used processing techniques. There will be a dicussion for this in the frameworks repo.
