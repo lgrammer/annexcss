@@ -145,6 +145,8 @@ Originally I wanted to use animate.css itself or a fork of the project but it's 
 
 https://webpack.js.org/guides/tree-shaking/
 
-There is one major core difference outside of the postcss scripts and size. AnnexCSS wraps all elements with required properties instead of individually applying them. This allows for cleaner markup. Instead of animate__animated animate__fadeIn just for one animation, you just need @fadeIn etc. If you have a completely vanilla project that doesn't utilize webpack (or a framework), I'd recommend animate.css instead.
+There is one major core difference outside of the postcss scripts and size. AnnexCSS wraps all elements with required properties instead of individually applying them. This allows for cleaner markup. Instead of animate__animated animate__fadeIn just for one animation, you just need @fadeIn etc. 
+
+If you have a completely vanilla project that doesn't utilize webpack (or a framework), I'd recommend animate.css instead.
 
 There are docs planned that will be released within the previously mentioned JS framework. 
