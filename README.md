@@ -1,12 +1,8 @@
 # @nnexCSS 
 
-AnnexCSS is a lightweight single-file pure CSS animation library made for use with Next.js in a TBA front-end framework. It can be used independently with any web framework or project.
-
-Next.js now uses postcss directly. Processing scripts can easily be moved framework side expanding the utility of a truly minimalist CSS library.
+AnnexCSS is a lightweight single-file pure CSS animation library made for use with Next.js in a TBA front-end framework. It can be used independently with any web framework or project that utilizies webpack.
 
 When minified the entire module takes up <1kb. Should you require only a few basic animations the annex.css file can easily be searched without much effort reducing your CSS overhead even further. Just copy what you need to your global.css 🏴‍☠️
-
-If you aren't using AnnexCSS with a framework and still need some basics such as minification - I recommend using postcss with cssnano. AnnexCSS being only a single file makes it easy to target.
 
 ```bash
 npm i annexcss
@@ -149,9 +145,8 @@ Using the animate.css package to compile annex.css was just a method to prefix a
 
 Originally I wanted to use animate.css itself or a fork of the project but the project is a bit older now and had unneeded overhead. The current recent versions of Next.js (>9.5.0) make the animate.css postcss scripts a bit redundant.
 
-There is one major core difference outside of the scripts and size. AnnexCSS wraps all elements with required properties instead of individually applying them. This allows for cleaner markup. Instead of animate__animated animate__fadeIn just for one animation, you just need @fadeIn etc. Tree shaking handles anything unused before it even hits the browser. If you have a a completely vannila project that doesn't include a framework that uses webpack, I'd recommend animate.css instead.
+There is one major core difference outside of the scripts and size. AnnexCSS wraps all elements with required properties instead of individually applying them. This allows for cleaner markup. Instead of animate__animated animate__fadeIn just for one animation, you just need @fadeIn etc. Tree shaking handles anything unused before it even hits the browser. If you have a a completely vanilla project that doesn't include a framework that uses webpack, I'd recommend animate.css instead.
 
 There are docs planned that will be released within the previously mentioned JS framework. 
 
 A Tailwind plugin is also in the works. 
-
