@@ -2,8 +2,6 @@
 
 AnnexCSS is a lightweight single-file pure CSS animation library made for use with Next.js in a TBA front-end framework. It can be used independently with any web framework or project that utilizies webpack.
 
-Should you require only a few basic animations the annex.css file can easily be searched without much effort reducing your CSS overhead even further. Just copy what you need to your global.css 🏴‍☠️
-
 ```bash
 npm i annexcss
 ```
