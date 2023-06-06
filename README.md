@@ -166,7 +166,7 @@ This library was originally compiled using a custom animate.css build so you may
 
 Using the animate.css package to compile annex.css was just a method to prefix and quickly iterate on commonly used CSS animation techniques for an accompanying JS framework. 
 
-Originally I wanted to use animate.css itself or a fork of the project but it's getting a bit older now and had unneeded overhead for my use case. 
+Originally I wanted to use animate.css itself but it's getting a bit older now and had unneeded overhead for my use case. 
 
 There is one major core difference outside of the postcss scripts and size. AnnexCSS wraps all elements with required properties instead of individually applying them. This allows for cleaner markup. Instead of animate__animated animate__fadeIn just for one animation, you just need @fadeIn etc. 
 
