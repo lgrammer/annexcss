@@ -1,6 +1,6 @@
 # @nnexCSS 
 
-AnnexCSS is a lightweight single-file pure CSS animation library made for use in a TBA React framework. It can be used independently with any web framework or project that utilizies webpack.
+AnnexCSS is a lightweight single-file pure CSS animation library made for use in a TBA React framework. It can be used independently with any web framework or project that utilizies webpack. Not using webpack? Postcss-purgecss can help too.
 
 ```bash
 npm i annexcss
@@ -135,18 +135,46 @@ In regards to browser compatibility AnnexCSS focuses entirely on webkit. Postcss
 
 ```
 
+You can call the @keyframe directly in any class. Just make sure to declare the duration too.
+
+```CSS
+
+.bounceHover:hover {
+
+  animation: bounce; 
+  animation-duration: 2s; 
+
+}
+
+```
+
+And you can change variables to customize your animations. Make sure you use a backslash to escape the @ when cascading over the animation classes. All AnnexCSS classes use @ as a prefix.
+
+```CSS
+
+.\@fadeIn {
+
+  --animate-duration: 10s;
+  
+}
+
+```
+
 # About
 
 This library was originally compiled using a custom animate.css build so you may take notice of the simliar class names. Many of the "uncommon" classes were removed to simplify the class set and reduce build size as much as possible.
 
 Using the animate.css package to compile annex.css was just a method to prefix and quickly iterate on commonly used CSS animation techniques for an accompanying JS framework. 
 
-Originally I wanted to use animate.css itself or a fork of the project but it's getting a bit older now and had unneeded overhead for my use case. Not only is postcss commonly found on the framework side now - webpack itself can be configured to properly 'tree shake' CSS files.
-
-https://webpack.js.org/guides/tree-shaking/
+Originally I wanted to use animate.css itself or a fork of the project but it's getting a bit older now and had unneeded overhead for my use case. 
 
 There is one major core difference outside of the postcss scripts and size. AnnexCSS wraps all elements with required properties instead of individually applying them. This allows for cleaner markup. Instead of animate__animated animate__fadeIn just for one animation, you just need @fadeIn etc. 
 
-If you have a completely vanilla project that doesn't utilize webpack (or a framework), I'd recommend animate.css instead.
+AnnexCSS relies on webpack (or webpack-based frameworks) to clean unused properties/styles, minify, etc.
 
-There are docs planned that will be released within the previously mentioned JS framework. 
+https://webpack.js.org/guides/tree-shaking/
+
+If all else fails modern browsers typically clean up unused CSS on render too.
+
+There are docs planned that will be released within the previously mentioned JS framework.
+
