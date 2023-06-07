@@ -1,6 +1,6 @@
 # @nnexCSS 
 
-AnnexCSS is a lightweight single-file pure CSS animation library made for use in a TBA React framework. It can be used independently with any web framework or project that utilizies webpack. Not using webpack? Postcss-purgecss can help too.
+AnnexCSS is a lightweight single-file pure CSS animation library made for use in a TBA React framework.
 
 ```bash
 npm i annexcss
