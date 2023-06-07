@@ -61,7 +61,6 @@ You can extend functionality by adding utility classes
 
 
 <br/> 
-<br/>
 
 
 |    Utilities      |                    |                     |                      |
