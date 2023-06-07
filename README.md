@@ -73,8 +73,6 @@ You can extend functionality by adding utility classes
 
 <br/>
 
-<br/>
-
 
 
 So how does it work? AnnexCSS first creates variables in :root to reuse as basic properties. 
@@ -174,7 +172,6 @@ AnnexCSS relies on webpack (or webpack-based frameworks) to clean unused propert
 
 https://webpack.js.org/guides/tree-shaking/
 
-If all else fails modern browsers typically clean up unused CSS on render too.
+If all else fails modern browsers typically clean up unused CSS on render too. Using all 70 animations on a single page without tree shaking only causes a single point drop in lighthouse performance scores. Universal selector properties always get cleaned up as well.
 
 There are docs planned that will be released within the previously mentioned JS framework.
-
