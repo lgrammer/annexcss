@@ -132,7 +132,7 @@ In regards to browser compatibility AnnexCSS focuses entirely on webkit. Postcss
 
 ```
 
-You can call the @keyframe directly in any class. Just make sure to declare the duration too.
+You can call the @keyframes directly in any class. Just make sure to declare the duration too.
 
 ```CSS
 
