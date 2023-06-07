@@ -13,7 +13,7 @@ You can easily add animations to your JSX or markup just like any regular CSS cl
 
 ```HTML
 
-<div className="@fadeIn container"> I love potato </div>
+<div className="@fadeIn"> I love potato </div>
 
 ```
 
