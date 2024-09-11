@@ -1,6 +1,6 @@
 # @nnexCSS 
 
-AnnexCSS is a lightweight single-file pure CSS animation library made for use in a TBA React framework.
+AnnexCSS is a lightweight single-file pure CSS animation library.
 
 ```bash
 npm i annexcss
@@ -161,8 +161,6 @@ And you can change variables to customize your animations. Make sure you use a b
 
 This library was originally compiled using a custom animate.css build so you may take notice of the simliar class names. Many of the "uncommon" classes were removed to simplify the class set and reduce build size as much as possible.
 
-Using the animate.css package to compile annex.css was just a method to prefix and quickly iterate on commonly used CSS animation techniques for an accompanying JS framework. 
-
 Originally I wanted to use animate.css itself but it's getting a bit older now and had unneeded overhead for my use case. 
 
 There is one major core difference outside of the postcss scripts and size. AnnexCSS wraps all elements with required properties instead of individually applying them. This allows for cleaner markup. Instead of animate__animated animate__fadeIn just for one animation, you just need @fadeIn etc. 
@@ -171,6 +169,4 @@ AnnexCSS relies on webpack (or webpack-based frameworks) to clean unused propert
 
 https://webpack.js.org/guides/tree-shaking/
 
-If all else fails modern browsers typically clean up unused CSS on render too. Using all 70 animations on a single page without tree shaking only causes a single point drop in lighthouse performance scores. Universal selector properties always get cleaned up as well.
-
-There are docs planned that will be released within the previously mentioned JS framework.
+If you want to use it without webpack, purgecss is a good option. Using all 70 animations at the same time on different elements without tree shaking or purging only causes a single point drop in lighthouse performance scores.
