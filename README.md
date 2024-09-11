@@ -2,12 +2,7 @@
 
 AnnexCSS is a lightweight single-file pure CSS animation library.
 
-```bash
-npm i annexcss
-```
-```bash
-import 'annexcss'
-```
+NOTE: deprecated and removed from npm
 
 You can easily add animations to your JSX or markup just like any regular CSS class  
 
@@ -165,8 +160,4 @@ Originally I wanted to use animate.css itself but it's getting a bit older now a
 
 There is one major core difference outside of the postcss scripts and size. AnnexCSS wraps all elements with required properties instead of individually applying them. This allows for cleaner markup. Instead of animate__animated animate__fadeIn just for one animation, you just need @fadeIn etc. 
 
-AnnexCSS relies on webpack (or webpack-based frameworks) to clean unused properties/styles, minify, etc.
-
-https://webpack.js.org/guides/tree-shaking/
-
-If you want to use it without webpack, purgecss is a good option. Using all 70 animations at the same time on different elements without tree shaking or purging only causes a single point drop in lighthouse performance scores.
+Using with PurgeCSS is recommended.
